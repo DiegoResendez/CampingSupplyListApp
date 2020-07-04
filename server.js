@@ -46,4 +46,3 @@ db.sequelize.sync().then(() => {
     );
   });
 });
-//testing a herney's commement
