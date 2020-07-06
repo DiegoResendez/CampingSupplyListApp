@@ -3,7 +3,7 @@ const express = require("express");
 const session = require("express-session");
 // Requiring passport as we've configured it
 const passport = require("./config/passport");
-const password = require("dotenv").config();
+// const password = require("dotenv").config();
 
 
 // Setting up port and requiring models for syncing
