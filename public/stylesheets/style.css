@@ -2,3 +2,18 @@ form.signup,
 form.login {
   margin-top: 50px;
 }
+
+body {
+  background-color: rgb(250, 233, 187);
+}
+
+h2 {
+  color: rgb(68, 143, 81);
+  text-emphasis: center;
+  font-size: 40px;
+}
+
+.form-group {
+  color: brown;
+}
+
