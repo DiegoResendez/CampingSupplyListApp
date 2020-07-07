@@ -33,6 +33,3 @@ module.exports = function(sequelize, DataTypes) {
   });
   return User;
 };
-
-
-// Andrew added this completely useless comment
