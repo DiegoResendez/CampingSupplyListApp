@@ -8,28 +8,12 @@ const app = express();
 
 // Requiring passport as we've configured it
 const passport = require("./config/passport");
-<<<<<<< Updated upstream
 // const password = require("dotenv").config();
-=======
-//const password = require("dotenv").config();
->>>>>>> Stashed changes
 
 // Setting up port and requiring models for syncing
 const PORT = process.env.PORT || 8080;
 const db = require("./models");
 
-<<<<<<< Updated upstream
-=======
-const connection = mysql.createConnection({
-  password: process.env.DB_PASS
-});
-
-connection.connect(function(err) {
-  if (err) throw err;
-  console.log("connected as id " + connection.threadId);
-  afterConnection();
-});
->>>>>>> Stashed changes
 // Creating express app and configuring middleware needed for authentication
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -55,3 +39,5 @@ db.sequelize.sync().then(() => {
     );
   });
 });
+
+
