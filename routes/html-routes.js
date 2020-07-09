@@ -4,7 +4,9 @@ const express = require("express");
 const exphbs = require("express-handlebars");
 const app = express();
 
-app.engine("handlebars", exphbs());
+var PORT = process.env.PORT || 8080;
+
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 app.get("/", (req,res) => {
@@ -16,13 +18,14 @@ res.render("home");
 const isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = function(app) {
-  app.get("/", (req, res) => {
+
+  app.get("/",(req, res) => {
     // If the user already has an account send them to the members page
-    if (req.user) {
+    if (req.user){
       res.redirect("/members");
     }
-    res.render(path.join(__dirname, "../views/signup.handlebars"));
-    // res.sendFile(path.join(__dirname, "../public/signup.html"));
+    // res.render(path.join(__dirname, "../views/signup.handlebars"));
+    res.sendFile(path.join(__dirname, "../public/signup.html"));
   });
 
   app.get("/login", (req, res) => {
@@ -30,14 +33,14 @@ module.exports = function(app) {
     if (req.user) {
       res.redirect("/members");
     }
-    res.render("index", [{id:"sample data",item:"sample-text"}]);
+    res.render("login", {emailAddress:"sample-email", password: "password"});
     // res.sendFile(path.join(__dirname, "../public/login.html"));
   });
 
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
-  app.get("/members", isAuthenticated, (req, res) => {
-    res.render(path.join(__dirname, "../views/members.handlebars"));
-    // res.sendFile(path.join(__dirname, "../public/members.html"));
+  app.get("/signup", (req, res) => {
+        res.render("signup", {name:"sample-name", emailAddress: "sample-email", password:"sample-password", state: "sample-state"});
+    //res.sendFile(path.join(__dirname, "../public/members.html"));
   });
-};
+}
