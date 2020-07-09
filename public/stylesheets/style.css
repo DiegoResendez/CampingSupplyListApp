@@ -3,17 +3,41 @@ form.login {
   margin-top: 50px;
 }
 
+.jumbotron {
+  text-align: center;
+  color: rgb(55, 43, 226);
+  font-size: 800px;
+  background: inherit;
+  background: unset;
+}
+
+h1 {
+  text-align: center;
+  color: rgb(55, 43, 226);
+  font-size: 80px;
+}
+
+.container, .row, h6 {
+  text-align: center;
+  color: rgb(220, 248, 59)
+  
+}
+
 body {
   background-color: rgb(250, 233, 187);
+  background-image: url(../Images/Forrest.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 h2 {
-  color: rgb(68, 143, 81);
+  color: rgb(220, 248, 59);
   text-emphasis: center;
-  font-size: 40px;
+  font-size: 80px;
 }
 
 .form-group {
-  color: brown;
+  color: rgb(220, 248, 59);
+  text-align: left;
 }
 
