@@ -5,7 +5,6 @@ const exphbs = require("express-handlebars");
 
 const app = express();
 
-
 // Requiring passport as we've configured it
 const passport = require("./config/passport");
 // const password = require("dotenv").config();
@@ -34,21 +33,21 @@ app.set("view engine", "handlebars");
 require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
 
-let campingList = [{}];
+// let campingList = [{}];
 
-app.get("/", function(req, res) {
-  connection.query("SELECT * FROM campinglist;", function(err, data) {
-    if (err) throw err;
+// app.get("/", function(req, res) {
+//   connection.query("SELECT * FROM campinglist;", function(err, data) {
+//     if (err) throw err;
 
-    // Test it
-    // console.log('The solution is: ', data);
+//     // Test it
+//     // console.log('The solution is: ', data);
 
-    // Test it
-    // return res.send(data);
+//     // Test it
+//     // return res.send(data);
 
-    res.render("index", { campingList: data });
-  });
-});
+//     res.render("index", { campingList: data });
+//   });
+// });
 
 // Syncing our database and logging a message to the user upon success
 db.sequelize.sync().then(() => {
@@ -61,48 +60,48 @@ db.sequelize.sync().then(() => {
   });
 });
 
-// Create a new plan
-app.post("/models/camping-List", function(req, res) {
-  connection.query("INSERT INTO campinglist (items) VALUES (?)", [req.body.plan], function(err, result) {
-    if (err) {
-      return res.status(500).end();
-    }
+// // Create a new plan
+// app.post("/models/camping-List", function(req, res) {
+//   connection.query("INSERT INTO campinglist (items) VALUES (?)", [req.body.plan], function(err, result) {
+//     if (err) {
+//       return res.status(500).end();
+//     }
 
-    // Send back the ID of the new plan
-    res.json({ id: result.insertId });
-    console.log({ id: result.insertId });
-  });
-});
+//     // Send back the ID of the new plan
+//     res.json({ id: result.insertId });
+//     console.log({ id: result.insertId });
+//   });
+// });
 
-// Update a plan
-app.put("/models/camping-List/:id", function(req, res) {
-  connection.query("UPDATE campinglist SET item = ? WHERE id = ?", [req.body.plan, req.params.id], function(err, result) {
-    if (err) {
-      // If an error occurred, send a generic server failure
-      return res.status(500).end();
-    }
-    else if (result.changedRows === 0) {
-      // If no rows were changed, then the ID must not exist, so 404
-      return res.status(404).end();
-    }
-    res.status(200).end();
+// // Update a plan
+// app.put("/models/camping-List/:id", function(req, res) {
+//   connection.query("UPDATE campinglist SET item = ? WHERE id = ?", [req.body.plan, req.params.id], function(err, result) {
+//     if (err) {
+//       // If an error occurred, send a generic server failure
+//       return res.status(500).end();
+//     }
+//     else if (result.changedRows === 0) {
+//       // If no rows were changed, then the ID must not exist, so 404
+//       return res.status(404).end();
+//     }
+//     res.status(200).end();
 
-  });
-});
+//   });
+// });
 
-// Delete a plan
-app.delete("/models/camping-List/:id", function(req, res) {
-  connection.query("DELETE FROM campinglist WHERE id = ?", [req.params.id], function(err, result) {
-    if (err) {
-      // If an error occurred, send a generic server failure
-      return res.status(500).end();
-    }
-    else if (result.affectedRows === 0) {
-      // If no rows were changed, then the ID must not exist, so 404
-      return res.status(404).end();
-    }
-    res.status(200).end();
+// // Delete a plan
+// app.delete("/models/camping-List/:id", function(req, res) {
+//   connection.query("DELETE FROM campinglist WHERE id = ?", [req.params.id], function(err, result) {
+//     if (err) {
+//       // If an error occurred, send a generic server failure
+//       return res.status(500).end();
+//     }
+//     else if (result.affectedRows === 0) {
+//       // If no rows were changed, then the ID must not exist, so 404
+//       return res.status(404).end();
+//     }
+//     res.status(200).end();
 
-  });
-});
+//   });
+// });
 
