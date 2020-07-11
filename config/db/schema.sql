@@ -21,6 +21,8 @@ CREATE TABLE campinglist(
 	PRIMARY KEY (id)
 );
 
+
+-- This table may be unnecessary with the CRUD, needs to be a seach function.
 CREATE TABLE productlist (
     id int NOT NULL AUTO_INCREMENT,
     product VARCHAR(45) NULL, 
