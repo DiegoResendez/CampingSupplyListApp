@@ -4,7 +4,7 @@ let connection = mysql.createConnection({
   host: "localhost",
   port: 3306,
   user: "root",
-  password: "O@kland510",
+  password: "Maru2009!",
   database: "camp_app_db"
 });
 
