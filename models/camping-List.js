@@ -7,16 +7,15 @@ let Sequelize = require("sequelize");
 let sequelize = require("../config/connection.js");
 
 // Creates a "Chirp" model that matches up with DB
-let CamperInfo = sequelize.define("camperInfo", {
-  name: Sequelize.STRING,
-  email: Sequelize.STRING,
-  userPassword: Sequelize.STRING,
-  state: Sequelize.STRING,
-  created_at: Sequelize.DATE
+let CampingList = sequelize.define("campingList", {
+  items: Sequelize.STRING,
+  gotIt: Sequelize.BOOLEAN,
+  needIt: Sequelize.BOOLEAN,
+  addShoppingCart: Sequelize.BOOLEAN  // not sure about this BOOLEAN.  Think we switched this to Amazon keyword search.
 });
 
 // Syncs with DB
-CamperInfo.sync();
+CampingList.sync();
 
 // Makes the Chirp Model available for other files (will also create a table)
-module.exports = CamperInfo;
+module.exports = CampingList;
