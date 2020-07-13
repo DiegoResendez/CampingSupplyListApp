@@ -1,5 +1,5 @@
 var db = require("../models");
-module.exports = function(req,res) {
+module.exports = function(app) {
 
 // GET route for getting all of the todos
 app.get("/api/campinglist", function(req, res) {
