@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 $(document).ready(() => {
   // This file just does a GET request to figure out which user is logged in
   // and updates the HTML on the page
@@ -55,7 +54,6 @@ function removeHide(){
 
 
   textSearchElement.addEventListener("click", searchAmazon);
-=======
 // $(document).ready(() => {
 //   // This file just does a GET request to figure out which user is logged in
 //   // and updates the HTML on the page
@@ -196,4 +194,3 @@ $(document).ready(function() {
       $newItemInput.val("");
     }
   });
->>>>>>> 1041a2bd037043e38c10351bb387f24768eae412
