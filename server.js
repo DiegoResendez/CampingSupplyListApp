@@ -32,7 +32,10 @@ app.set("view engine", "handlebars");
 // Requiring our routes
 require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
+require("./routes/camperinfo-api-routes.js")(app);
+require("./routes/members-routes.js")(app);
 
+<<<<<<< HEAD
 // let campingList = [{}];
 
 // app.get("/", function(req, res) {
@@ -48,6 +51,9 @@ require("./routes/api-routes.js")(app);
 //     res.render("index", { campingList: data });
 //   });
 // });
+=======
+
+>>>>>>> 1041a2bd037043e38c10351bb387f24768eae412
 
 // Syncing our database and logging a message to the user upon success
 db.sequelize.sync().then(() => {
@@ -60,6 +66,7 @@ db.sequelize.sync().then(() => {
   });
 });
 
+<<<<<<< HEAD
 // // Create a new plan
 // app.post("/models/camping-List", function(req, res) {
 //   connection.query("INSERT INTO campinglist (items) VALUES (?)", [req.body.plan], function(err, result) {
@@ -104,4 +111,6 @@ db.sequelize.sync().then(() => {
 
 //   });
 // });
+=======
+>>>>>>> 1041a2bd037043e38c10351bb387f24768eae412
 

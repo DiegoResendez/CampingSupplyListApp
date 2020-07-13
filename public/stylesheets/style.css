@@ -3,18 +3,13 @@ form.login {
   margin-top: 50px;
 }
 
-.jumbotron {
-  text-align: center;
-  color: rgb(55, 43, 226);
-  font-size: 800px;
-  background: inherit;
-  background: unset;
-}
+
 
 h1 {
   text-align: center;
   color: rgb(55, 43, 226);
   font-size: 80px;
+  
 }
 
 .container, .row, h6 {
@@ -41,3 +36,25 @@ h2 {
   text-align: left;
 }
 
+.crudButtons{
+  display: table;
+  color: rgb(55, 43, 226);
+}
+
+.buttonsRow{
+display: table-cell
+}
+
+ul {
+  position: relative;
+  margin: 150px;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+ul li {
+  display: flex;
+  font-size: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: rgb(241, 143, 14)
+}

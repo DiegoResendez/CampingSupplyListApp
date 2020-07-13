@@ -9,7 +9,7 @@ CREATE TABLE camperinfo (
     email varchar(50) NOT NULL,
     userPassword varchar(20) NOT NULL,
      state varchar(50) DEFAULT NULL,
-    PRIMARY KEY (`id`)
+    PRIMARY KEY (id)
 );
 
 CREATE TABLE campinglist(
