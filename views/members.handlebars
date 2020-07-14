@@ -35,13 +35,22 @@
 <button type="update" class="btn btn-primary btn-lg">Edit Item</button>
 <form action="/" method="DELETE">
 <button type="delete" class="btn btn-primary btn-lg">Delete Item</button>
-<form action="/" method="SEARCH">
-<button type="search" class="btn btn-primary btn-lg">Search Amazon</button>
+
 </form>
 </div>
 
 </div>
 
+<form>
+        <input type="text" class="form-control" id="amazonSearchText" value="Camping Item">
+        <button type="button" id="searchAmazon" class="btn btn-primary btn-lg">Search Amazon</button>
+      </form>
+    <form>
+      <div class="AmazonSearchResults hide" id="searchResultsLists" >
+        <ul class="list-group ml-2 mb-4" id="searchResults01">
+        </ul>
+      </form>
+   
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript" src="js/login.js"></script>
