@@ -5,7 +5,6 @@ const exphbs = require("express-handlebars");
 
 const app = express();
 
-
 // Requiring passport as we've configured it
 const passport = require("./config/passport");
 // const password = require("dotenv").config();
@@ -35,7 +34,6 @@ require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
 require("./routes/camperinfo-api-routes.js")(app);
 require("./routes/members-routes.js")(app);
-
 
 
 // Syncing our database and logging a message to the user upon success
