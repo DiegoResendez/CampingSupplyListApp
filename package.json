@@ -1,10 +1,10 @@
 {
-  "name": "1-passport-example",
+  "name": "mysql-sequelize-heroku",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "npm run lint",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "lint": "eslint --quiet .",
     "fix": "eslint --fix .",
