@@ -8,6 +8,24 @@ let env       = process.env.NODE_ENV || 'development';
 let config    = require(__dirname + '/../config/config.json')[env];
 let db        = {};
 
+let mysql = require('mysql')
+let connection;
+
+if (process.env.JAWSDB_URL) 
+{
+  connection = mysql.createConnection(process.env.JAWSDB_URL);
+}
+else
+{
+  connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: 'hacktheplanet',
+    database: 'camp_app_db'
+  });
+}
+
+
 if (config.use_env_variable) {
   var sequelize = new Sequelize(process.env[config.use_env_variable]);
 } else {
@@ -33,4 +51,5 @@ Object.keys(db).forEach(function(modelName) {
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
+connection.connect();
 module.exports = db;
